@@ -1,0 +1,69 @@
+{
+  "name": "@gmdev/base",
+  "version": "0.0.1",
+  "description": "@gmdev (Dummy org to demo scoped packages)",
+  "main": "build/index.js",
+  "scripts": {
+    "storybook": "NODE_ENV=development start-storybook -p 9001",
+    "prestart": "yarn && yarn build",
+    "start": "npm-run-all --parallel storybook build:watch",
+    "test": "jest --coverage",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna exec --parallel -- babel src -d dist --ignore src/__tests__/,src/__stories__/,src/__wireframe__/**",
+    "build:watch": "yarn build -- --watch",
+    "export-static-storybook": "build-storybook -c .storybook -o .out",
+    "publish-packages": "lerna publish",
+    "prepublish-packages": "yarn build",
+    "precommit": "yarn test",
+    "postinstall": "yarn bootstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garmeeh/example-component-library.git"
+  },
+  "author": "Gary Meehan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garmeeh/example-component-library/issues"
+  },
+  "homepage": "https://github.com/garmeeh/example-component-library/#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^4.0.7",
+    "@storybook/react": "^4.0.7",
+    "all-contributors-cli": "^5.4.1",
+    "babel-core": "^7.0.0-bridge",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "eslint": "^5.9.0",
+    "eslint-config-react-app": "^3.0.5",
+    "eslint-plugin-flowtype": "^3.2.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "glob-loader": "^0.3.0",
+    "jest": "^23.6.0",
+    "jest-dom": "^2.1.1",
+    "lerna": "^3.4.3",
+    "lint-staged": "^8.0.5",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-testing-library": "^5.3.0",
+    "styled-components": "^4.1.1",
+    "styled-map": "^3.2.0-rc.1"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
