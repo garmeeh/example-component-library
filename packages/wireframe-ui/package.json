@@ -1,13 +1,13 @@
 {
   "name": "@gmdev/wireframe-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Example Wireframe UI",
   "main": "dist/index.js",
   "module": "src/index.js",
   "author": "Gary Meehan",
   "dependencies": {
-    "@gmdev/button": "^0.0.2",
-    "@gmdev/counter": "^0.0.2"
+    "@gmdev/button": "^0.0.3",
+    "@gmdev/counter": "^0.0.3"
   },
   "peerDependencies": {
     "react": "^16.0.0",
