@@ -7,9 +7,14 @@
   "author": "Gary Meehan",
   "dependencies": {
     "@gmdev/button": "^0.0.2",
-    "@gmdev/counter": "^0.0.2",
-    "react": "^16.0.0"
+    "@gmdev/counter": "^0.0.2"
   },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "styled-components": "^4.1.1",
+    "styled-map": "^3.2.0-rc.1"
+  }
+
   "publishConfig": {
     "access": "public"
   }
